@@ -19,6 +19,7 @@ class Workout(Base):
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"))
     name = Column(String, index=True)
+    description = Column(String, index=True)
     routines = relationship("Routine", secondary=workout_routine_association, back_populates="workouts")
 
 class Routine(Base):
